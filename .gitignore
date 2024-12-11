@@ -1,4 +1,6 @@
 .clangd
+input.txt
+*.in
 
 # C++
 *.out
