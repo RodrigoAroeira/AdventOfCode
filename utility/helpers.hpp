@@ -1,6 +1,7 @@
 #pragma once
 
 #include <fstream>
+#include <iostream>
 #include <sstream>
 #include <string>
 #include <vector>
@@ -26,4 +27,14 @@ inline std::vector<std::string> extractLines(const std::string &text) {
   return lines;
   // return {std::istream_iterator<std::string>(iss),
   //         std::istream_iterator<std::string>()};
+}
+
+inline std::vector<std::string> extractInputLines() {
+  std::vector<std::string> lines;
+  std::string line;
+
+  while (std::getline(std::cin, line))
+    lines.push_back(line);
+
+  return lines;
 }
