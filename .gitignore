@@ -9,3 +9,5 @@ input.txt
 venv/
 .venv/
 
+# rust
+target/
