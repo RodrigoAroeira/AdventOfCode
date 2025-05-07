@@ -89,22 +89,21 @@ def print3x3sub(pos: tuple[int, int], matrix: list):
 
 
 def main() -> None:
-
     with open("input.txt") as f:
         f.seek(0)
-        lines = f.readlines()
+        lines = [line.strip() for line in f.readlines() if line]
 
     transposed = transposeLinesMatrix(lines)
 
-    LR_diagonals = get_diagonals_lr(lines)
-    RL_diagonals = get_diagonals_rl(lines)
+    lr_diagonals = get_diagonals_lr(lines)
+    rl_diagonals = get_diagonals_rl(lines)
 
     counter = 0
 
     counter += find_xmas_in_lines(lines)
     counter += find_xmas_in_lines(transposed)
-    counter += find_xmas_in_lines(LR_diagonals)
-    counter += find_xmas_in_lines(RL_diagonals)
+    counter += find_xmas_in_lines(lr_diagonals)
+    counter += find_xmas_in_lines(rl_diagonals)
 
     print(counter)
 

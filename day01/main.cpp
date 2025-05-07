@@ -11,7 +11,6 @@ int main() {
   // part 1
   std::vector<int> left;
   std::vector<int> right;
-  std::vector<int> distances;
   std::ifstream inputFile("input.txt");
   std::string line;
 
@@ -28,7 +27,7 @@ int main() {
   std::sort(right.begin(), right.end());
 
   int sum = 0;
-  for (int i = 0; i < left.size(); i++) {
+  for (size_t i = 0; i < left.size(); i++) {
     int distance = left[i] - right[i];
     if (distance < 0) {
       distance = -distance;
