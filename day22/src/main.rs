@@ -39,7 +39,7 @@ fn get_last_digit(n: NumType) -> NumType {
 
 fn main() -> Result<()> {
     let txt = get_raw_text("input.in")?;
-    let lines = get_vec_from_txt(txt.clone());
+    let lines = get_vec_from_txt(&txt);
     let parsed: Vec<NumType> = parse_str_vec(&lines);
 
     let mut sum1 = 0;

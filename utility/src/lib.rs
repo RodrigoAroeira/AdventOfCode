@@ -12,12 +12,8 @@ pub fn get_raw_text(filename: &str) -> Result<String> {
     Ok(contents)
 }
 
-pub fn get_vec_from_txt(txt: String) -> Vec<String> {
-    let mut v = Vec::new();
-    for line in txt.split_terminator('\n') {
-        v.push(String::from(line));
-    }
-    v
+pub fn get_vec_from_txt(txt: &str) -> Vec<String> {
+    txt.lines().map(String::from).collect()
 }
 
 pub fn parse_str_vec<T>(vec: &[String]) -> Vec<T>
